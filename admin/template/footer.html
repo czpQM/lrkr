@@ -1,0 +1,121 @@
+
+		<script src="<?php echo BASE_URL;?>admin/template/assets/js/jquery-2.0.3.min.js"></script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<![endif]-->
+
+		<!--[if !IE]> -->
+
+		<script type="text/javascript">
+			window.jQuery || document.write("<script src='<?php echo BASE_URL;?>admin/template/assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
+		</script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script type="text/javascript">
+ window.jQuery || document.write("<script src='<?php echo BASE_URL;?>admin/template/assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+
+		<script type="text/javascript">
+			if("ontouchend" in document) document.write("<script src='<?php echo BASE_URL;?>admin/template/assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+		</script>
+		<script src="<?php echo BASE_URL;?>admin/template/assets/js/bootstrap.min.js"></script>
+		<script src="<?php echo BASE_URL;?>admin/template/assets/js/typeahead-bs2.min.js"></script>
+
+		<!-- page specific plugin scripts -->
+
+		<script src="<?php echo BASE_URL;?>admin/template/assets/js/jquery.dataTables.min.js"></script>
+		<script src="<?php echo BASE_URL;?>admin/template/assets/js/jquery.dataTables.bootstrap.js"></script>
+
+		<!-- ace scripts -->
+
+		<script src="<?php echo BASE_URL;?>admin/template/assets/js/ace-elements.min.js"></script>
+		<script src="<?php echo BASE_URL;?>admin/template/assets/js/ace.min.js"></script>
+
+		<!-- inline scripts related to this page -->
+
+		<script type="text/javascript">
+			jQuery(function($) {
+						var oTable1 = $('#sample-table-2').dataTable( {
+						"aoColumns": [
+						  { "bSortable": false },
+						  null, null,null, null, null,
+						  { "bSortable": false }
+						] } );
+						
+						
+						$('table th input:checkbox').on('click' , function(){
+							var that = this;
+							$(this).closest('table').find('tr > td:first-child input:checkbox')
+							.each(function(){
+								this.checked = that.checked;
+								$(this).closest('tr').toggleClass('selected');
+							});
+								
+						});
+					
+					
+						$('[data-rel="tooltip"]').tooltip({placement: tooltip_placement});
+						function tooltip_placement(context, source) {
+							var $source = $(source);
+							var $parent = $source.closest('table')
+							var off1 = $parent.offset();
+							var w1 = $parent.width();
+					
+							var off2 = $source.offset();
+							var w2 = $source.width();
+					
+							if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) return 'right';
+							return 'left';
+						}
+						//$('textarea[class*=autosize]').autosize({append: "\n"});
+						/*$('textarea.limited').inputlimiter({
+							remText: '%n character%s remaining...',
+							limitText: 'max allowed : %n.'
+						});
+			
+						$('.date-picker').datepicker({autoclose:true}).next().on(ace.click_event, function(){
+							$(this).prev().focus();
+						});
+						*/
+						$('#ftime').click(function(){
+								return Calendar('ftime');
+						});
+						$('#login_time').click(function(){
+								return Calendar('login_time');
+						});
+						$('#addtime').click(function(){
+								return Calendar('addtime');
+						});
+						var content,describe;
+						KindEditor.ready(function(K) {
+						describe = K.create('textarea[name="describe"]', {
+							allowFileManager : true
+						});
+						content = K.create('textarea[name="content"]', {
+							allowFileManager : true
+						});
+					});
+					//选择文章的标题的时候，把category_id这个属性的值填充到隐藏域
+
+			})					
+			$('#article_title').change(function(){
+			     $('#category_id').attr('value',$(this).find('option:selected').attr('category_id'))
+			});
+			//系统信息类型选择的时候
+			$('#choice_type').change(function(){
+			      if($(this).val()==0){
+				      $('#setup_value').html('<input type="text" id="form-field-1" placeholder="请填写数据" name="value" class="col-xs-10 col-sm-5" />');
+				  }else{
+				      $('#setup_value').html('<input type="file" id="form-field-1"  name="value" class="col-xs-10 col-sm-5" />');				  
+				  }
+			});
+		</script>
+	<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
+</body>
+</html>

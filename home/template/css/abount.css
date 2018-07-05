@@ -1,0 +1,61 @@
+.main{
+	width: 100%;
+	overflow: hidden;
+	background: #fff9ef;
+}
+.main .container{
+	width: 1200px;
+	overflow: hidden;
+	margin: 0 auto;
+	margin-bottom: 58px;
+}
+
+.main .container .content{
+	width: 1200px;
+	overflow: hidden;
+}
+.main .container .content>ul{
+	width: 1350px;
+	overflow: hidden;
+	margin-top: 38px;
+}
+.main .container .content>ul>li{
+	overflow: hidden;
+	width: 300px;
+	margin-right: 150px;
+	float: left;
+}
+
+.main .container .content p{
+	font-size: 14px;
+	color: #666666;
+	text-indent: 2em;
+	margin-top: 37px;
+	letter-spacing: 5px;
+	line-height: 28px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

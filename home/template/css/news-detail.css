@@ -1,0 +1,47 @@
+.main {
+	width: 100%;
+	overflow: hidden;
+	background: #fff9ef;
+}
+.main .container{
+	width: 1200px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+.main .container .text{
+	width: 1200px;
+	overflow: hidden;
+}
+.main .container .text h3{
+	font-size: 23px;
+	color: #333333;
+	text-align: center;
+	margin-top: 83px;
+	margin-bottom: 70px;
+}
+.main .container .text p{
+	font-size:14px ;
+	color: #666666;
+	letter-spacing: 4px;
+	text-indent: 2em;
+	line-height: 30px;
+}
+.main .container .filp{
+	width: 1200px;
+	overflow: hidden;
+}
+.main .container .filp p{
+	font-size: 17px;
+	margin-top: 53px;
+	margin-bottom: 56px;
+	letter-spacing: 4px;
+}
+.main .container .filp p a{
+	color: #999999;
+	text-decoration: none;
+}
+.main .container .filp p a:hover{
+	color: #f18101;
+}
+

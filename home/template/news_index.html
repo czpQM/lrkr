@@ -1,0 +1,51 @@
+		<link rel="stylesheet" href="home/template/css/news.css" />
+			<div class="banner">
+			<div class="container">
+				<ul>
+					<?php foreach($banner as $k=>$v){?>
+						<li><a href="<?php echo $v['banner_url'];?>"><img src="<?php echo $v['banner_info'];?>" alt=""/></a></li>
+					<?php };?>
+				</ul>
+			</div>
+		</div>
+		
+		
+		<div class="main">
+			<div class="container">
+					<p class="location">当前位置：<a href="index.php">首页</a>><span class="current">新闻中心</span></p>
+				<div class="menu_news">
+					<h1>News center</h1>
+					<h2>新闻中心</h2>
+					<div class="nav">
+						<!--  class="current"  -->
+						<ul>
+						<?php foreach($news as $k=>$v){?>
+							<li><a href="<?php echo BASE_URL?>index.php?c=news&a=index&id=<?php echo $v['id'];?>"><?php echo $v['category_name'];?></a></li>
+						<?php };?>
+						</ul>
+					</div>
+				</div>
+					<ul class="list">
+						<?php foreach($re['res'] as $k=>$v){?>
+						<li>
+							<a href="<?php echo BASE_URL?>index.php?c=news-detail&a=index&category_id=<?php echo $v['category_id'];?>&id=<?php echo $v['id'];?>">
+								<p><?php echo $v['title'];?><span><?php echo $v['ftime'];?></span></p>
+							</a>
+						</li>
+						<?php };?>
+					</ul>
+				<div class="page">
+					<?php echo $re['page'];?>
+					<!-- <a href="#" class="pre">上一页</a>
+					<a href="#" class="current">1</a>
+					<a href="#">2</a>
+					<a href="#">3</a>
+					<a href="#">4</a>
+					<a href="#">5</a>
+					<a href="#" class="next">下一页</a>
+					<span>到第<input type="text" value="" />页</span>
+					<input type="button" value="跳转" class="btn" />
+					<span>共六页</span> -->
+				</div>
+			</div>
+		</div>

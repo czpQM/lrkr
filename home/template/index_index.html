@@ -1,0 +1,94 @@
+		<link rel="stylesheet" href="home/template/css/index.css" />
+		<!--轮播图-->
+		<div class="banner">
+			<div class="container">
+				<ul>
+					<?php foreach($banner as $k=>$v){?>
+					<li><a href="<?php echo $v['banner_url'];?>"><img src="<?php echo $v['banner_info'];?>" alt=""/></a></li>
+					<?php };?>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="summary">
+			<div class="container">
+				<ul>
+					<li><span>质量<br/>保障</span></li>
+					<li><span>高端<br/>大气</span></li>
+					<li><span>分类<br/>多样</span></li>
+					<li><span>免费<br/>配送</span></li>
+				</ul>
+			</div>
+		</div>
+		<!--abount-->
+		<div class="abount">
+			<div class="container">
+				<div class="left">
+					<img src="home/template/img/d.png" alt="" />
+				</div>
+				<div class="right">
+					<div class="title">
+						<h2>Abount us</h2>
+						<h3>关于我们</h3>
+					</div>
+					<p><?php echo $about['description'];?></p>
+					<div class="more">
+						<a href="abount.php">了解详情</a>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+		<div class="product">
+			<div class="container">
+				<div class="title">
+					<h5>Product display</h5>
+					<h6>产品展示</h6>
+				</div>
+				<ul>
+					<?php foreach($produt as $k=>$v){?>
+					<li>
+						<a href="<?php echo BASE_URL?>index.php?c=produt-detail&a=index&id=<?php echo $v['id'];?>"><img src="<?php echo $v['pro_photo'];?>" alt=""/></a>
+						<p><a href="<?php echo BASE_URL?>index.php?c=produt-detail&a=index&id=<?php echo $v['id'];?>"><?php echo $v['pro_name'];?></a></p>
+					</li>
+					<?php };?>
+				</ul>
+			</div>
+		</div>
+		<div class="news">
+			<div class="container">
+				<div class="left">
+					<div class="title">
+						<h1>News information</h1>
+						<h2>新闻动态</h2>
+					</div>
+					<ul>
+						<?php foreach($news as $k=>$v){?>
+						<li>
+							<p><a href="<?php echo BASE_URL?>index.php?c=news-detail&a=index&id=<?php echo $v['id'];?>&category_id=<?php echo $v['category_id'];?>"><?php echo $v['title'];?></a><span><br/><?php echo $v['ftime'];?></span></p>
+						</li>
+						<?php };?>
+					</ul>
+				</div>
+				<div class="right">
+					<a href="<?php echo BASE_URL?>index.php?c=news&a=index"><img src="home/template/img/h1.png"alt=""/></a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="contact">
+			<div class="container">
+				<div class="title">
+					<h3>Contact us </h3>
+					<h4>联系我们</h4>
+				</div>
+				<div class="left">
+					<p><img src="home/template/img/dianhua.png"alt="" /><span><?php echo $dianhua['value'];?></span></p>
+					<p><img src="home/template/img/xin.png" alt="" /><span><?php echo $email['value'];?></span></p>
+					<p><img src="home/template/img/chuanzhen.png" alt=""/><span><?php echo $chuanzhen['value'];?></span></p>
+					<p><img src="home/template/img/liulan.png" alt="" /><span><?php echo $web_address['value'];?></span></p>		
+					<p><img src="home/template/img/weizhi.png" alt="" /><span><?php echo $address['value'];?></span></p>
+					
+				</div>
+			</div>
+		</div>

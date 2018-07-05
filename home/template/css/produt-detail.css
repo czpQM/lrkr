@@ -1,0 +1,38 @@
+
+.main{
+	width: 100%;
+	overflow: hidden;
+	background: #fff9ef;
+}
+.main .container{
+	width: 1200px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+.main .container .text .left img{
+	margin-left: 113px;
+	margin-top: 141px;
+	float: left;
+	border: 1px solid#333333;
+}
+.main .container .text .right{
+	width: 344px;
+	float: left;
+	margin-left: 135px;
+	margin-top: 142px;
+	margin-bottom: 113px;
+}
+.main .container .text .right h4{
+	font-size: 26px;
+	color: #333333;
+	font-weight: normal;
+}
+.main .container .text .right p{
+	font-size: 20px;
+	color: #333333;
+	margin-top: 22px;
+}
+.main .container .text .right p span{
+	font-size: 21px;
+	color: #8c8b88;
+}

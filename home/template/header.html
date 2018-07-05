@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title><?php echo $title;?></title>
+		<link rel="stylesheet" href="home/template/css/style.css" />
+		<script type="text/javascript" src="<?php echo BASE_URL?>home/template/js/jquery-1.8.0.min.js" ></script>
+		<script type="text/javascript" src="<?php echo BASE_URL?>home/template/js/banner.js" ></script>
+	</head>
+	<body>
+		<div class="head">
+			<div class="container">
+				<div class="logo">
+					<a href="<?php echo BASE_URL.'index.php?c=index&a=index&admin=0' ?>"><img src="<?php echo $logo['value'] ?>"/></a>
+				</div>
+				<ul>
+					<?php foreach($nav as $k=>$v){?>
+						<li><a href="<?php echo BASE_URL;?>index.php?c=<?php echo $v['c'];?>&a=<?php echo $v['a'];?>"><?php echo $v['category_name'];?></a></li>
+					<?php };?>
+				</ul>
+			</div>
+		</div>

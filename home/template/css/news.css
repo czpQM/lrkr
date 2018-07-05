@@ -1,0 +1,67 @@
+.main{
+	width: 100%;
+	overflow: hidden;
+	background: #fff9ef;
+}
+.main .container{
+	width: 1200px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+.main .container .list{
+	width: 1200px;
+	overflow: hidden;
+}
+.main .container .list{
+	width: 1090px;
+	overflow: hidden;
+	margin-left: 54px;
+	margin-top: 34px;
+}
+.main .container .list li{
+	overflow: hidden;
+	border-bottom: 1px dashed #666666;
+}
+
+.main .container .list li a{
+	text-decoration: none;
+}
+.main .container .list li a:hover p{
+	color: #f18101;
+}
+
+.main .container .list li a.current p{
+	color: #f18101;
+}
+.main .container .list li a p{
+	margin-bottom: 23px;
+	letter-spacing: 5px;
+	font-size: 14px;
+	color: #8c8b88;
+}
+.main .container .list li a p span{
+	float: right;
+	letter-spacing: 2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

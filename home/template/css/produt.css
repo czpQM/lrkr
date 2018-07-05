@@ -1,0 +1,124 @@
+.main{
+	width: 100%;
+	overflow: hidden;
+	background: #fff9ef;
+}
+.main .container{
+	width: 1200px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+.main .container .location{
+	width: 1200px;
+	overflow: hidden;
+}
+.main .container .location p{
+	font-size: 14px;
+	float: left;
+	margin-top: 20px;
+}
+
+.main .container .location p.current{
+	color: #f18101;
+	
+}
+.main .container .menu h1{
+	font-weight: normal;
+	font-size: 24px;
+	color: #999999;
+	text-align: center;
+	margin-top: 73px;
+}
+.main .container .menu h2{
+	font-weight: normal;
+	font-size: 21px;
+	color: #333333;
+	text-align: center;
+	margin-top: 15px;
+}
+.main .container .menu>ul{
+	width: 1200px;
+	overflow: hidden;
+	background: #f18101 ;
+	border: 2px solid #f18101!important;
+	margin: 0 auto;
+	margin-top: 63px;
+}
+.main .container .menu>ul>li{
+	width: 113px;
+	list-style: none;
+	color: #ffffff;
+	font-size: 23px;
+	float: left;
+	margin-left: 34px;
+	margin-bottom: 24px;
+	margin-top: 24px;
+	margin-right: 53px;
+	text-align: center;
+	line-height: 47px !important;
+}
+/*.main .container .menu>ul>li:hover a{
+	color:#33333;
+}*/
+
+.main .container {
+	width: 1200px;
+	
+}
+.main .container ul{
+	width: 1200px;
+	list-style: none;
+	overflow: hidden;
+}
+.main .container ul li{
+	float: left;
+	margin-top: 28px;
+	text-align: center;
+}
+.main .container ul li p{
+	margin-top: 22px;
+}
+
+.main .container .center{
+	width: 1261px;
+	overflow: hidden;
+}
+.main .container .center ul{
+	width: 1261px;
+	list-style: none;
+	overflow: hidden;
+	margin-top: 26px;
+}
+.main .container .center ul li{
+	float: left;
+	margin-right: 65px;
+	text-align: center;
+}
+.main .container .center ul li img{
+	border: 1px solid #ADABAB;
+	padding: 19px;
+}
+.main .container .center ul li p{
+	font-size: 17px;
+}
+.main .container .center ul li p a{
+	color: #333333;
+	text-decoration: none;
+}
+.main .container .center ul li:hover p a{
+	color: #f28b27;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,37 @@
+		<link rel="stylesheet" href="home/template/css/produt-detail.css"/>
+			<div class="banner">
+			<div class="container">
+				<ul>
+					<?php foreach($banner as $k=>$v){?>
+						<li><a href="<?php echo $v['banner_url'];?>"><img src="<?php echo $v['banner_info'];?>" alt=""/></a></li>
+					<?php };?>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="main">
+			<div class="container">
+					<p class="location">当前位置：<a href="index.html">首页</a>><span class="current">产品详情</span></p>
+				<div class="menu_pro">
+					<h1>Product display</h1>
+					<h2>产品中心</h2>
+					<div class="nav">
+					<!-- class="current" -->
+						<ul>
+						<?php foreach($produt as $k=>$v){?>
+							<li><a href="<?php echo BASE_URL?>index.php?c=produt&a=index&id=<?php echo $v['id'];?>"><?php echo $v['category_name'];?></a></li>
+						<?php };?>
+						</ul>
+					</div>
+				</div>	
+				<div class="text">
+					<div class="left">
+						<img src="<?php echo $rs['pro_photo'];?>" alt=""  width=456 height=430/>
+					</div>
+					<div class="right">
+						<h4><?php echo $rs['pro_name'];?></h4>
+						<?php echo $rs['content'];?>
+					</div>
+				</div>
+			</div>
+		</div>

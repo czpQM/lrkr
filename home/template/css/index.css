@@ -1,0 +1,300 @@
+
+.summary{
+	width:100%;
+	overflow: hidden;
+	background: #fff8ef;
+}
+.summary .container{
+	width: 1200px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+.summary ul{
+	font-size: 17px;
+	color: #FFFFFF;
+	list-style: none;
+	width: 1284px;
+}
+.summary ul li{
+	width: 236px;
+	height: 237px;
+	background: url(../img/t.png);
+	float: left;
+	text-align: center;
+	margin-top: 80px;
+	margin-right: 85px;
+	margin-bottom: 83px;
+}
+.summary ul li span{
+	display: block;
+	margin-top: 93px;
+}
+
+
+
+.abount{
+	width: 100%;
+	overflow: hidden;
+	background: #ae9a82;
+}
+.abount>.container{
+	width: 1200px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+.abount .container .left{
+	float: left;
+	margin-top: 50px;
+	margin-bottom: 47px;
+}
+.abount .container .right{
+	width: 669px;
+	float: right;
+	margin-top: 38px;
+	
+}
+.abount .container .right .title{
+	border-bottom: 2px dotted #f6f4f2;
+}
+.abount .container .right .title h2{
+	font-size: 27px;
+	color: #fefefe;
+	font-weight: normal;
+}
+.abount .container .right .title h3{
+	font-size: 23px;
+	color:  #fefefe;
+	font-weight: normal;
+	margin-bottom: 18px;
+}
+.abount .container .right  p{
+	width: 665px;
+	overflow: hidden;
+	margin-top: 34px;
+	text-indent: 2em;
+	font-size: 14px;
+	color: #fefefe;
+	line-height: 24px;
+}
+.abount .more{
+	margin-top: 43px;
+	float: right;
+	width: 124px;
+	height: 33px;
+	background: #f18101;
+}
+.abount .more a{
+	display: block;
+	font-size: 18px;
+	color: #f3f0ec;
+	line-height: 33px;
+	text-align: center;
+	width: 124px;
+	height: 33px;
+}
+
+
+
+
+
+.product{
+	width: 100%;
+	overflow: hidden;
+	background: #FEFEFE;
+}
+.product .title{
+	text-align: center;
+	margin: 0 auto;
+	border-bottom: 2px dotted #424242;
+	margin-bottom: 18px;
+}
+.product .title h5{
+	font-size: 31px;
+	color: #adabab;
+	margin-top: 16px;
+
+}
+.product .title h6{
+	font-size: 23px;
+	color: #333333;
+	margin-top: 11px;
+	margin-bottom: 6px;
+}
+
+.product .title img{
+	margin-top: 9px;
+	margin-bottom: 18px;
+}
+
+.product .container{
+	width: 1200px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+.product .container ul{
+	width: 1270px;
+	list-style: none;
+	overflow: hidden;
+	margin-bottom: 21px;
+}
+.product .container ul li{
+	float: left;
+	margin-right: 67px;
+	text-align: center;
+}
+.product .container ul li img{
+	border: 1px solid #ADABAB;
+	padding: 19px;
+}
+.product .container ul li p{
+	margin: 21px 0;
+	font-size: 17px;
+}
+.product .container ul li p a{
+	color: #333333;
+	text-decoration: none;
+}
+.product .container ul li:hover p a{
+	color: #f28b27;
+}
+
+
+
+
+.news{
+	width: 100%;
+	overflow: hidden;
+	background:#fff9ef;
+}
+.news .container{
+	width: 1200px;
+	overflow: hidden;
+	margin: 0 auto;
+	background:#fff9ef;
+}
+.news .container .left {
+	width: 544px;
+	margin-top: 35px;
+	float: left;
+	margin-bottom: 83px;
+}
+.news .container .left .title{
+	border-bottom: 1px dotted#474645;
+}
+.news .container .left .title h1{
+	font-size: 26px;
+	color: #adabab;
+	margin-bottom: 15px;
+}
+.news .container .left .title h2{
+	font-size: 21px;
+	color: #333333;
+	font-weight: normal;
+	margin-bottom: 59px;
+}
+.news .container .left .center{
+	margin-top: 59px;
+	
+}
+.news .container .left ul{
+	margin-top: 23px;
+}
+.news .container .left ul li{
+	border-bottom: 1px dashed #333333;
+	margin-bottom: 17px;
+}
+.news .container .left ul li p{
+	font-size: 17px;
+	margin-bottom: 19px;
+}
+.news .container .left ul li p a{
+	color: #333333;
+	text-decoration: none;
+}
+.news .container .left ul li p:hover a{
+	color: #f6af75;
+}
+
+.news .container .left ul li span{
+	font-size: 14px;
+	color:  #333333;
+}
+.news .container .left ul li img{
+	margin-top: 21px;
+}
+.news .container .right{
+	float: right;
+	margin-top: 93px;
+	margin-left: 31px;
+	margin-bottom: 100px;
+}
+
+
+.contact{
+	width: 100%;
+	overflow: hidden;
+	background: #FFFFFF;
+}
+.contact .container{
+	width: 1200px;
+	overflow: hidden;
+	margin:0 auto ;
+}
+.contact .container .title{
+	text-align: center;
+	margin-top: 28px;
+}
+.contact .container .title h3{
+	font-size: 26px;
+	color:#adabab ;
+	font-weight: normal;
+}
+.contact .container .title h4{
+	font-size:23px;
+	color: #333333;
+	font-weight: normal;
+}
+.contact .container .left{
+	width: 1200px;
+	height: 304px;
+}
+.contact .container .left p{
+	overflow: hidden;
+	margin-top: 16px;
+	text-align: center;
+
+}
+.contact .container .left p img{
+	line-height: 38px;
+	vertical-align: middle;
+	margin-right: 20px;
+	margin-left: 26px;
+}
+.contact .container .left span{
+	display: inline-block;
+	width: 415px;
+	height: 38px;
+	background: #e9d0b1;
+	font-size:14px;
+	color: #333333;
+	text-align: center;
+	line-height: 38px;
+	background-color: #e9d0b1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+		<link rel="stylesheet" href="home/template/css/abount.css" />
+		<div class="banner">
+			<div class="container">
+			    <ul>
+				<?php foreach($banner as $k=>$v){?>
+					<li><a href="<?php echo $v['banner_url'];?>"><img src="<?php echo $v['banner_info'];?>" alt=""/></a></li>
+				<?php };?>
+				</ul>
+			</div>
+		</div>
+		<div class="main">
+			<div class="container">
+				<p class="location">当前位置：<a href="index.php">首页</a>><span class="current">关于我们</span></p>
+				<div class="menu">
+					<h1>Abount us</h1>
+					<h2>关于我们</h2>
+					<div class="nav">
+						 <!-- class="current" -->
+						<ul>
+						<?php foreach($abount as $k=>$v){?>
+							<li><a href="<?php echo BASE_URL?>index.php?c=abount&a=index&id=<?php echo $v['id'];?>"><?php echo $v['category_name'];?></a></li>
+						<?php };?>
+						</ul>
+					</div>
+				</div>
+				<div class="content">
+					<?php echo $rs['content']?>
+				</div>
+			</div>
+		</div>

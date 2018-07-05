@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>后台管理系统</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- basic styles -->
+
+		<link href="<?php echo BASE_URL;?>admin/template/assets/css/bootstrap.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="<?php echo BASE_URL;?>admin/template/assets/css/font-awesome.min.css" />
+		
+		<link rel="stylesheet" href="<?php echo BASE_URL;?>public/kindeditor/themes/default/default.css" />
+	    <script charset="utf-8" src="<?php echo BASE_URL;?>public/kindeditor/kindeditor-min.js"></script>
+	    <script charset="utf-8" src="<?php echo BASE_URL;?>public/kindeditor/lang/zh_CN.js"></script> 
+		
+		<!--[if IE 7]>
+		  <link rel="stylesheet" href="<?php echo BASE_URL;?>admin/template/assets/css/font-awesome-ie7.min.css" />
+		<![endif]-->
+
+		<!-- page specific plugin styles -->
+
+		<!-- fonts -->
+
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />
+
+		<!-- ace styles -->
+
+		<link rel="stylesheet" href="<?php echo BASE_URL;?>admin/template/assets/css/ace.min.css" />
+		<link rel="stylesheet" href="<?php echo BASE_URL;?>admin/template/assets/css/ace-rtl.min.css" />
+		<link rel="stylesheet" href="<?php echo BASE_URL;?>admin/template/assets/css/ace-skins.min.css" />
+
+		<!--[if lte IE 8]>
+		  <link rel="stylesheet" href="<?php echo BASE_URL;?>admin/template/assets/css/ace-ie.min.css" />
+		<![endif]-->
+
+		<!-- inline styles related to this page -->
+
+		<!-- ace settings handler -->
+
+		<script src="<?php echo BASE_URL;?>admin/template/assets/js/ace-extra.min.js"></script>
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+		<!--[if lt IE 9]>
+		<script src="<?php echo BASE_URL;?>admin/template/assets/js/html5shiv.js"></script>
+		<script src="<?php echo BASE_URL;?>admin/template/assets/js/respond.min.js"></script>
+		<![endif]-->
+		<script src="<?php echo BASE_URL;?>admin/template/assets/js/showdate.js"></script>
+	</head>
+
+	<body>
+		<div class="navbar navbar-default" id="navbar">
+			<script type="text/javascript">
+				try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+			</script>
+
+			<div class="navbar-container" id="navbar-container">
+				<div class="navbar-header pull-left">
+					<a href="#" class="navbar-brand">
+						<small>
+							<img src="<?php echo BASE_URL;?>home/template/img/logo.png" width="30" height="30" alt="" />
+							后台管理系统
+						</small>
+					</a><!-- /.brand -->
+				</div><!-- /.navbar-header -->
+
+				<div class="navbar-header pull-right" role="navigation">
+					<ul class="nav ace-nav">
+						<li class="grey">
+							<a class="btn btn-xm pull-right" target="_blank" href="<?php echo BASE_URL;?>index.php?c=index&a=index&admin=0">
+								<span class="badge badge-grey">访问网站</span>
+							</a>
+							<ul class="pull-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+								<li class="dropdown-header">
+									<i class="icon-ok"></i>
+									4 Tasks to complete
+								</li>
+
+								<li>
+									<a href="#">
+										<div class="clearfix">
+											<span class="pull-left">Software Update</span>
+											<span class="pull-right">65%</span>
+										</div>
+
+										<div class="progress progress-mini ">
+											<div style="width:65%" class="progress-bar "></div>
+										</div>
+									</a>
+								</li>
+
+								<li>
+									<a href="#">
+										<div class="clearfix">
+											<span class="pull-left">Hardware Upgrade</span>
+											<span class="pull-right">35%</span>
+										</div>
+
+										<div class="progress progress-mini ">
+											<div style="width:35%" class="progress-bar progress-bar-danger"></div>
+										</div>
+									</a>
+								</li>
+
+								<li>
+									<a href="#">
+										<div class="clearfix">
+											<span class="pull-left">Unit Testing</span>
+											<span class="pull-right">15%</span>
+										</div>
+
+										<div class="progress progress-mini ">
+											<div style="width:15%" class="progress-bar progress-bar-warning"></div>
+										</div>
+									</a>
+								</li>
+
+								<li>
+									<a href="#">
+										<div class="clearfix">
+											<span class="pull-left">Bug Fixes</span>
+											<span class="pull-right">90%</span>
+										</div>
+
+										<div class="progress progress-mini progress-striped active">
+											<div style="width:90%" class="progress-bar progress-bar-success"></div>
+										</div>
+									</a>
+								</li>
+
+								<li>
+									<a href="#">
+										See tasks with details
+										<i class="icon-arrow-right"></i>
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="green">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<i class="icon-envelope icon-animated-vertical"></i>
+								<span class="badge badge-success"><?php echo $totalmsg['totalNum'];?></span>
+							</a>
+
+							<ul class="pull-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+								<li class="dropdown-header">
+									<i class="icon-envelope-alt"></i>
+								</li>
+                                <?php foreach($msglist AS $k=>$v):?>
+								<li>
+									<a href="index.php?c=msg&a=update&admin=1&id=<?php echo $v['id'];?>">
+										<img src="<?php echo BASE_URL;?>admin/template/assets/avatars/avatar.png" class="msg-photo" alt="Alex's Avatar" />
+										<span class="msg-body">
+											<span class="msg-title">
+												<span class="blue"><?php echo $v['msg_user'];?>:</span>
+												<?php echo $v['msg_user'];?>
+											</span>
+
+											<span class="msg-time">
+												<i class="icon-time"><?php echo $v['msg_time'];?></i>
+												<span><?php echo $v['id'];?></span>
+											</span>
+										</span>
+									</a>
+								</li>
+                                <?php endforeach;?>
+							
+
+								<li>
+									<a href="index.php?c=msg&a=index&admin=1">
+										查看更多
+										<i class="icon-arrow-right"></i>
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="light-blue">
+							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+								<img class="nav-user-photo" src="<?php echo $_SESSION['AdminInfo']['admin_portrait'];?>" width="36" height="36" alt="<?php echo $_SESSION['AdminInfo']['nickname'];?>" />
+								<span class="user-info">
+									<small>欢迎您,</small>
+									<?php echo $_SESSION['AdminInfo']['nickname'];?>	
+								</span>
+
+								<i class="icon-caret-down"></i>
+							</a>
+
+							<ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+								<li>
+									<a href="index.php?c=adminuser&a=update&admin=1&id=<?php echo $_SESSION['AdminInfo']['id']?>">
+										<i class="icon-user"></i>
+										管理员信息
+									</a>
+								</li>
+
+								<li class="divider"></li>
+
+								<li>
+									<a href="index.php?c=logout&a=index&admin=1#">
+										<i class="icon-off"></i>
+										退出登录
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul><!-- /.ace-nav -->
+				</div><!-- /.navbar-header -->
+			</div><!-- /.container -->
+		</div>
+
+		<div class="main-container" id="main-container">
+			<script type="text/javascript">
+				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+			</script>
+
+			<div class="main-container-inner">
+				<a class="menu-toggler" id="menu-toggler" href="#">
+					<span class="menu-text"></span>
+				</a>
+
+				<div class="sidebar" id="sidebar">
+					<script type="text/javascript">
+						try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+					</script>
+					<ul class="nav nav-list">
+						<!--
+						<li class="active">
+							<a href="index.html">
+								<i class="icon-dashboard"></i>
+								<span class="menu-text"> 控制台 </span>
+							</a>
+						</li>
+						-->
+						
+						<?php foreach($navlist AS $k=>$v):?>
+						<?php if($v['pid']==0 && in_array($v['id'],$_SESSION['AdminInfo']['group_allow'])):?>
+						<li>
+							<a href="#" class="dropdown-toggle">
+								<i class="icon-list"></i>
+								<span class="menu-text"><?php echo $v['nav_name'];?></span>
+								<b class="arrow icon-angle-down"></b>
+							</a>
+
+							<ul class="submenu">							
+							   <?php foreach($navlist AS $k1=>$v1):?>
+							   <?php if($v1['pid']==$v['id'] && $v1['is_show']==1 && in_array($v['id'],$_SESSION['AdminInfo']['group_allow'])):?>
+								<li>
+									<a href="<?php echo BASE_URL;?>index.php?c=<?php echo $v1['c'];?>&a=<?php echo $v1['a']?>&admin=1">
+										<i class="icon-double-angle-right"></i>
+										<?php echo $v1['nav_name'];?>
+									</a>
+								</li>
+								<?php endif;?>
+								<?php endforeach;?>								
+							</ul>
+						</li>
+						<?php endif;?>
+						<?php endforeach;?>
+						
+						<!-- <li>
+							<a href="#" class="dropdown-toggle">
+								<i class="icon-book"></i>
+								<span class="menu-text">新闻中心</span>
+
+								<b class="arrow icon-angle-down"></b>
+							</a>
+
+							<ul class="submenu">
+								<li>
+									<a href="<?php echo BASE_URL;?>index.php?c=news&a=index&admin=1">
+										<i class="icon-double-angle-right"></i>
+										新闻列表
+									</a>
+								</li>
+								
+								<li>
+									<a href="<?php echo BASE_URL;?>index.php?c=news&a=add&admin=1">
+										<i class="icon-double-angle-right"></i>
+										新闻添加
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="dropdown-toggle">
+								<i class="icon-beer"></i>
+								<span class="menu-text">产品中心</span>
+
+								<b class="arrow icon-angle-down"></b>
+							</a>
+
+							<ul class="submenu">
+								<li>
+									<a href="<?php echo BASE_URL;?>index.php?c=product&a=index&admin=1">
+										<i class="icon-double-angle-right"></i>
+										产品列表
+									</a>
+								</li>
+								
+								<li>
+									<a href="<?php echo BASE_URL;?>index.php?c=product&a=add&admin=1">
+										<i class="icon-double-angle-right"></i>
+										产品添加
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="dropdown-toggle">
+								<i class="icon-bookmark"></i>
+								<span class="menu-text">公司介绍文章</span>
+
+								<b class="arrow icon-angle-down"></b>
+							</a>
+
+							<ul class="submenu">
+								<li>
+									<a href="<?php echo BASE_URL;?>index.php?c=article&a=index&admin=1">
+										<i class="icon-double-angle-right"></i>
+										文章列表
+									</a>
+								</li>
+								
+								<li>
+									<a href="<?php echo BASE_URL;?>index.php?c=article&a=add&admin=1">
+										<i class="icon-double-angle-right"></i>
+										文章添加
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="dropdown-toggle">
+								<i class="icon-camera"></i>
+								<span class="menu-text">图片轮播</span>
+
+								<b class="arrow icon-angle-down"></b>
+							</a>
+
+							<ul class="submenu">
+								<li>
+									<a href="<?php echo BASE_URL;?>index.php?c=banner&a=index&admin=1">
+										<i class="icon-double-angle-right"></i>
+										banner列表
+									</a>
+								</li>
+								
+								<li>
+									<a href="<?php echo BASE_URL;?>index.php?c=banner&a=add&admin=1">
+										<i class="icon-double-angle-right"></i>
+										banner添加
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="dropdown-toggle">
+								<i class="icon-exchange"></i>
+								<span class="menu-text">分类中心</span>
+
+								<b class="arrow icon-angle-down"></b>
+							</a>
+
+							<ul class="submenu">
+								<li>
+									<a href="<?php echo BASE_URL;?>index.php?c=category&a=index&admin=1">
+										<i class="icon-double-angle-right"></i>
+										分类列表
+									</a>
+								</li>
+								
+								<li>
+									<a href="<?php echo BASE_URL;?>index.php?c=category&a=add&admin=1">
+										<i class="icon-double-angle-right"></i>
+										分类添加
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="dropdown-toggle">
+								<i class="icon-comment"></i>
+								<span class="menu-text">前台留言</span>
+
+								<b class="arrow icon-angle-down"></b>
+							</a>
+
+							<ul class="submenu">
+								<li>
+									<a href="<?php echo BASE_URL;?>index.php?c=msg&a=index&admin=1">
+										<i class="icon-double-angle-right"></i>
+										留言列表
+									</a>
+								</li>
+								
+								<li>
+									<a href="<?php echo BASE_URL;?>index.php?c=msg&a=add&admin=1">
+										<i class="icon-double-angle-right"></i>
+										留言添加
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="dropdown-toggle">
+								<i class="icon-external-link"></i>
+								<span class="menu-text">后台导航</span>
+
+								<b class="arrow icon-angle-down"></b>
+							</a>
+
+							<ul class="submenu">
+								<li>
+									<a href="<?php echo BASE_URL;?>index.php?c=nav&a=index&admin=1">
+										<i class="icon-double-angle-right"></i>
+										导航列表
+									</a>
+								</li>
+								
+								<li>
+									<a href="<?php echo BASE_URL;?>index.php?c=nav&a=add&admin=1">
+										<i class="icon-double-angle-right"></i>
+										导航添加
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="dropdown-toggle">
+								<i class="icon-certificate"></i>
+								<span class="menu-text">系统数据</span>
+
+								<b class="arrow icon-angle-down"></b>
+							</a>
+
+							<ul class="submenu">
+								<li>
+									<a href="<?php echo BASE_URL;?>index.php?c=setup&a=index&admin=1">
+										<i class="icon-double-angle-right"></i>
+										数据列表
+									</a>
+								</li>
+								
+								<li>
+									<a href="<?php echo BASE_URL;?>index.php?c=setup&a=add&admin=1">
+										<i class="icon-double-angle-right"></i>
+										数据添加
+									</a>
+								</li>
+							</ul>
+						</li> -->					
+					</ul><!-- /.nav-list -->
+
+					<div class="sidebar-collapse" id="sidebar-collapse">
+						<i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
+					</div>
+
+					<script type="text/javascript">
+						try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+					</script>
+				</div>

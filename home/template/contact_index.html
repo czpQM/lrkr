@@ -1,0 +1,186 @@
+		<link rel="stylesheet" href="home/template/css/contact.css" />
+		<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+		<script type="text/javascript" src="<?php echo BASE_URL?>home/template/js/index.js" ></script>
+			<div class="banner">
+			<div class="container">
+				<ul>
+					<?php foreach($banner as $k=>$v){?>
+						<li><a href="<?php echo $v['banner_url'];?>"><img src="<?php echo $v['banner_info'];?>" alt=""/></a></li>
+					<?php };?>
+				</ul>
+			</div>
+		</div>
+		
+		
+		
+		<div class="main">
+			<div class="container">
+					<p class="location">当前位置：<a href="index.html">首页</a>><span class="current">联系我们</span></p>
+				<div class="menu">
+					<h1>Contact us</h1>
+					<h2>联系我们</h2>
+				</div>
+
+		<!--地图-->
+			<div id="dituContent"></div>
+		
+		<div class="column">
+			<div class="container">
+				<div class="cont">
+					<p><img src="home/template/img/dianhua.png"alt="" /><span><?php echo $dianhua['value'];?></span></p>
+					<p><img src="home/template/img/xin.png" alt="" /><span><?php echo $email['value'];?></span></p>
+					<p><img src="home/template/img/chuanzhen.png" alt=""/><span><?php echo $chuanzhen['value'];?></span></p>
+					<p><img src="home/template/img/liulan.png" alt="" /><span><?php echo $web_address['value'];?></span></p>		
+					<p><img src="home/template/img/weizhi.png" alt="" /><span><?php echo $address['value'];?></span></p>
+				</div>
+<!--表单-->
+				<form action="" method="post" accept-charset="utf-8" enctype="multipart/form-data" id="contact_form">
+					<div class="left">
+						<input type="text" name='msg_user' placeholder="姓名" id="msg_user" /><span id="user_care"></span>
+						<input type="text" name='msg_email' placeholder="Emall" id="msg_email" /><span id="email_care"></span>
+						<input type="text" name='msg_phone' placeholder="电话" id="msg_phone" /><span id="phone_care"></span>
+					</div>
+
+					<div class="right">
+						<input type="text" name='title' placeholder="标题"  id="title" />
+						<textarea name='content' placeholder="输入内容" id="content" ></textarea><span id="content_care"></span>
+						<input type="text" placeholder="请输入验证码" name="vcode" class="txt" id='vcode' />
+						<a href="javascript:;" id="changevcode">
+						<img style="width: 105px; height: 54px;" id="showvcode" src="<?php echo BASE_URL;?>index.php?c=vcode&a=index&admin=1"></a>
+						<input type="submit" placeholder="提交" class="sub" />
+					</div>
+				</form>
+				
+			</div>
+		</div>
+
+
+		</div>
+	 </div>
+	
+	<script>
+		/*$(function(){
+			var error=0;//定义错误次数
+			//检查姓名
+		   function checkUsername(){
+			   var rs='';
+			   if($('#msg_user').val().length>0){
+					//正则表达.exec(字符串)  /^开头[a-zA-Z]开头必须是大小写英文[A-Za-z0-9]{5,}开头后面...$结尾/
+					rs=/[^\u4E00-\u9FA5]{3,}$/.exec($('#msg_user').val());
+					if(rs==null){
+						$('#user_care').css('color','red');
+						$('#user_care').html('您输入的姓名含有违法字符');
+						error++;
+					}else{
+						error--;
+						//ajax查询姓名是否已经使用
+						$('#user_care').css('color','green');
+						$('#user_care').html('您输入的姓名完全合法,通过!');
+					}
+			   }  
+		   }
+		   //检查电话
+		   function checkPhone(){
+			   var rs='';
+			   if($('#msg_phone').val().length>0){
+					//正则表达.exec(字符串)  /^开头[a-zA-Z]开头必须是大小写英文[A-Za-z0-9]{5,}开头后面...$结尾/
+					rs=/^1(38|35|36|58)[0-9]{8}$/.exec($('#msg_phone').val());
+					if(rs==null){
+						$('#phone_care').css('color','red');
+						$('#phone_care').html('您输入的电话格式不对');
+						error++;
+					}else{
+						error--;
+						//ajax查询姓名是否已经使用
+						$('#phone_care').css('color','green');
+						$('#phone_care').html('您输入的电话正确!');
+					}
+			   }  
+		   }
+		   //检查邮箱
+		   function checkEmail(){
+			   var rs='';
+			   if($('#msg_email').val().length>0){
+					//正则表达.exec(字符串)
+					rs=/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.exec($('#msg_email').val());
+					if(rs==null){
+						$('#email_care').css('color','red');
+						$('#email_care').html('邮箱格式不正确');
+						error++;
+					}else{
+						error--;
+						$('#email_care').css('color','blue');
+						$('#email_care').html('填写邮箱正确');
+					}
+			   }  
+		   }
+		   //检查留言板
+		   function checkContent(){
+			   var rs='';
+			   if($('#content').val().length>0){
+					//正则表达.exec(字符串)  /^开头[a-zA-Z]开头必须是大小写英文[A-Za-z0-9]{5,}开头后面...$结尾/
+					rs=/^\s*\S((.){20,}\S)?\s*$/.exec($('#content').val());
+					if(rs==null){
+						$('#content_care').css('color','red');
+						$('#content_care').html('字数不能少于20个字');
+						error++;
+					}else{
+						error--;
+						//ajax查询姓名是否已经使用
+						$('#content_care').css('color','green');
+						$('#content_care').html('您输入的留言正确!');
+					}
+			   }  
+		   }
+		//姓名的单行文本输入框失去焦点的时候
+		$('#msg_user').blur(function(){
+				checkUsername();
+		});
+		$('#msg_phone').blur(function(){
+				checkPhone();
+		});
+		$('#msg_email').blur(function(){
+				checkEmail();
+		});
+		$('#content').blur(function(){
+				checkContent();
+		});
+		//表单提交的时候
+		$('#contact_form').submit(function(){
+				checkUsername();
+				checkPhone();
+				checkEmail();
+				checkContent();
+		//如果错误大于0,代表有很多错
+		 if(error>0){      
+		   //如果表单提交的时候，要先检查表单的元素，就必须阻止表单提交
+		   return false;
+		 }else{
+		   return true;
+		 }
+		 
+		});
+	});*/
+	</script>
+	 <script src="<?php echo BASE_URL;?>admin/template/assets/js/jquery/2.0.3/jquery.min.js"></script>
+
+	 <script type="text/javascript">
+		//验证码函数
+		$(function(){
+			$('#changevcode').click(function(){
+				$('#showvcode').attr('src','<?php echo BASE_URL;?>index.php?c=vcode&a=index&admin=1&'+Math.round(Math.random()*1000));
+			});
+
+			//点击提交按钮的时候，ajax提交表单数据
+			$('.sub').click(function(){
+				// alert(123)
+				$.post("",{msg_user:$('#msg_user').val(),msg_email:$('#msg_email').val(),msg_phone:$('#msg_phone'),title:$('#title').val(),content:$('#content').val(),vcode:$('#vcode').val()},function(data){
+					/*	alert(12331)
+					if(data == '2'){
+						alert('验证码错误，请重新输入')
+					}
+				})*/
+				return false;
+			})
+		});
+	 </script>

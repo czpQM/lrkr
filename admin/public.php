@@ -1,0 +1,11 @@
+<?php
+	if(empty($_GET['p'])==false){
+		$curPage=$_GET['p'];
+	}else{
+		$curPage=1;
+	}
+    $totalmsg=db_count('msg');
+	$msglist=db_select('msg','*','',1,'',3);
+	$navlist=db_select('nav');
+	//var_dump($navlist);exit;
+	//var_dump($msglist);exit;

@@ -1,0 +1,188 @@
+.main{
+	width: 100%;
+	overflow: hidden;
+	background: #fff9ef;
+}
+.main .container{
+	width: 1200px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+/*地图样式*/
+.iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+    .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+
+#dituContent{
+	width:1088px;
+	height:450px;
+	margin: 0 auto;
+}
+
+
+ .column{
+	width: 100%;
+	overflow: hidden;
+}
+ .column .container{
+	width: 1200px;
+	overflow: hidden;
+	margin:0 auto ;
+}
+.column .container .top{
+	text-align: center;
+	margin-top: 28px;
+}
+ .column .container .top h3{
+	font-size: 24px;
+	color:#adabab ;
+	font-weight: normal;
+}
+ .column .container .top h4{
+	font-size:29px;
+	color: #333333;
+	font-weight: normal;
+}
+ .column .container .cont{
+	width: 545px;
+	height: 304px;
+	float: left;
+	margin-top: 34px;
+	
+}
+.column .container .cont p{
+	overflow: hidden;
+	margin-top: 16px;
+
+}
+ .column .container .cont p img{
+	line-height: 38px;
+	vertical-align: middle;
+	margin-right: 20px;
+	margin-left: 26px;
+}
+ .column .container .cont span{
+	display: inline-block;
+	width: 415px;
+	height: 38px;
+	background: #e9d0b1;
+	font-size:14px;
+	color: #333333;
+	text-align: center;
+	line-height: 38px;
+	background-color: #e9d0b1;
+}
+
+
+
+
+.column .container  .left{
+	float: left;
+	width: 227px;
+	margin-top: 50px;
+}
+.column .container  .left input{
+	width: 224px;
+	height: 52px;
+	border: 1px solid #000000;
+	background: #fff9ef;
+	margin-bottom: 45px;
+	font-size: 17px;
+	color: #000000;
+	padding-left: 7px;
+	line-height: 52px;
+	outline: none;
+	
+}
+.column .container  .right{
+	float: right;
+	width: 406px;
+	margin-top: 50px;
+	margin-left: 19px;
+	position:  relative;
+	
+}
+.column .container .right input{
+	width: 396px;
+	height: 52px;
+	border: 1px solid #000100;
+	background: #fff9ef;
+	margin-bottom: 13px;
+	font-size: 17px;
+	color: #373334;
+	padding-left: 7px;
+	line-height: 52px;
+	outline: none;
+}
+.column .container  .right textarea{
+	width: 395px;
+	height: 184px;
+	margin-bottom: 16px;
+	border: 1px solid #000100;
+	background: #fff9ef;
+	resize: none;
+	font-size: 17px;
+	color: #373334;
+	padding-left: 7px;
+	outline: none;
+	overflow: auto;
+	font-family: "微软雅黑";
+}
+.column .container  .right a {
+	margin-left: 12px;
+	display:block;
+	width: 105px;
+	height: 54px;
+	overflow: hidden;
+	float: left;
+}
+
+.column .container  .right .txt{
+	width: 180px;
+	height: 52px;
+	border: 1px solid #000100;
+	background: #fff9ef;
+	font-size: 17px;
+	color: #373334;
+	padding-left: 7px;
+	line-height: 52px;
+	float: left;
+	margin-bottom: 0;
+}
+
+.column .container  .right .sub{
+	width: 111px;
+	height: 38px;
+	border: 1px solid #000100;
+	background: red;
+	cursor: pointer;
+	margin-bottom: 22px;
+	font-size: 17px;
+	color: #fdfbfe;
+	letter-spacing: 4px;
+	padding-left: 7px;
+	line-height: 38px;
+	margin-top: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

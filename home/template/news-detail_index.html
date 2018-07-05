@@ -1,0 +1,48 @@
+		<link rel="stylesheet" href="home/template/css/news-detail.css" />
+			<div class="banner">
+			<div class="container">
+				<ul>
+					<?php foreach($banner as $k=>$v){?>
+						<li><a href="<?php echo $v['banner_url'];?>"><img src="<?php echo $v['banner_info'];?>" alt=""/></a></li>
+					<?php };?>
+				</ul>
+			</div>
+		</div>
+		
+		
+		<!--页面新闻中心-->
+		<div class="main">
+			<div class="container">
+					<p class="location">当前位置：<a href="index.php">首页</a>><span class="current">新闻中心</span></p>
+				<div class="menu_news">
+					<h1>News Center</h1> 
+					<h2>新闻中心</h2>
+					<div class="nav">
+						<!--  class="current" -->
+						<ul>
+						<?php foreach($news as $k=>$v){?>
+							<li><a href="<?php echo BASE_URL?>index.php?c=news&a=index&id=<?php echo $v['id'];?>"><?php echo $v['category_name'];?></a></li>
+						<?php };?>
+						</ul>
+					</div>
+				</div>
+				<div class="text">
+					<h3><?php echo $rs['title'];?></h3>
+					<?php echo $rs['content'];?>
+				</div>
+				<div class="filp">
+
+					<?php if($last):?>
+					<p><a href="<?php echo BASE_URL?>index.php?c=news-detail&a=index&category_id=<?php echo $last[0]['category_id'];?>&id=<?php echo $last[0]['id'];?>">上一篇：<?php echo $last[0]['title'];?></a></p>
+				<?php else:?>
+					<p><a href="###">上一篇：无上一篇</a></p>
+					<?php endif;?>
+
+					<?php if($next):?>
+					<p><a href="<?php echo BASE_URL?>index.php?c=news-detail&a=index&category_id=<?php echo $next[0]['category_id'];?>&id=<?php echo $next[0]['id'];?>">下一篇：<?php echo $next[0]['title'];?></a></p>
+					<?php else:?>
+						<p><a href="###">下一篇：无下一篇</a></p>
+					<?php endif;?>
+				</div>
+			</div>
+		</div>
